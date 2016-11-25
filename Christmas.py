@@ -1,8 +1,8 @@
 import random
 from time import sleep
 
-people = ["Jordan", "Jeni", "Sidney", "Zach", "Tonya", "Derryl"]
-peopleremaining = ["Jordan", "Jeni", "Sidney", "Zach", "Tonya", "Derryl"]
+people = ["Jordan", "Jeni", "Sidney", "Zach", "Tonya", "Derryl", "Trevor"]
+peopleremaining = ["Jordan", "Jeni", "Sidney", "Zach", "Tonya", "Derryl", "Trevor"]
 testing = []
 couple1 = ["Jordan", "Jeni"]
 couple2 = ["Sidney", "Zach"]

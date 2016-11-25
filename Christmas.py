@@ -1,5 +1,4 @@
 import random
-from time import sleep
 
 people = ["Jordan", "Jeni", "Sidney", "Zach", "Tonya", "Derryl", "Trevor"]
 peopleremaining = ["Jordan", "Jeni", "Sidney", "Zach", "Tonya", "Derryl", "Trevor"]
@@ -24,16 +23,18 @@ verbose = False
 
 for i in people:
     fault = 0
-    ifile = open(i + ".txt", "w+")
-    recipient = random.choice(peopleremaining)
-    while not CoupleUnitTest(i, recipient):
+    ifile = open(i + ".txt", "w+")  # Opens a text file with the giver's name.
+    recipient = random.choice(peopleremaining)  # Picks a random person to be the recipient.
+    while not CoupleUnitTest(i, recipient):  # Runs the couple unit test to be sure it's not a couple.
         fault += 1
         if fault >= 100:
-            raise Exception("Could not complete, bad pair.")
-        recipient = random.choice(peopleremaining)
-    ifile.write("You will be giving a gift to " + recipient + ".")
-    peopleremaining.remove(recipient)
-    testing.append(i + " is giving a gift to " + recipient)
+            raise Exception("Could not complete, bad pair.")  # If it fails 100 times in a row, raises error.
+        recipient = random.choice(peopleremaining)  # If it is a couple, it tries to select someone else instead.
+    ifile.write("You will be giving a gift to " + recipient + ".")  # Saves the recipient to the giver's text file.
+    peopleremaining.remove(recipient)  # Removes the recipient from the list of choices remaining.
+
+    if verbose:
+        testing.append(i + " is giving a gift to " + recipient)
 
 if verbose:
     for i in testing:
